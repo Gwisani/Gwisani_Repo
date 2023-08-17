@@ -2,6 +2,7 @@
 {
     public class CheckLastFanSpeed
     {
+        public string LastPullCodeId { get; set; }
         public string LastFanSpeed { get; set; }
     }
 }
