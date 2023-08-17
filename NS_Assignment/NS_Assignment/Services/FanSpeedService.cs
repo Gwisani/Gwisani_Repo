@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using NS_AssignmentAPI.DataAccess;
 using NS_AssignmentAPI.Models;
+using System.Collections.Generic;
 
 namespace NS_AssignmentAPI.Services
 {
@@ -13,14 +14,22 @@ namespace NS_AssignmentAPI.Services
             _context = context;
         }
 
-        public async Task<List<FanSpeedStatus>> GetFanSpeedStatus()
+        public async Task<List<CheckLastFanSpeed>> GetFanSpeedStatus()
         {
             FanSpeedDataAccess da = new FanSpeedDataAccess(_context);
 
             try
             {
+                List<CheckLastFanSpeed> checkLastFanSpeed = new List<CheckLastFanSpeed>();
                 List<FanSpeedStatus> fanSpeedStatuses = await da.GetFanSpeedStatus();
-                return fanSpeedStatuses;
+
+                if (fanSpeedStatuses != null)
+                {
+                    checkLastFanSpeed[0].LastPullCodeId = fanSpeedStatuses[0].PullCodeId;
+                    checkLastFanSpeed[0].LastFanSpeed = fanSpeedStatuses[0].PullFanSpeedRequest;
+                }
+
+                return checkLastFanSpeed;
             }
             catch (Exception)
             {

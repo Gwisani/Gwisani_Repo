@@ -24,7 +24,7 @@ namespace NS_AssignmentAPI.Controllers
 
         // GET: api/FanSpeedStatus
         [HttpGet("GetFanSpeedStatus")]
-        public async Task<ActionResult<IEnumerable<FanSpeedStatus>>> GetFanSpeedStatuses()
+        public async Task<ActionResult<IEnumerable<CheckLastFanSpeed>>> GetFanSpeedStatuses()
         {
             if (_context.FanSpeedStatuses == null)
             {
@@ -33,12 +33,11 @@ namespace NS_AssignmentAPI.Controllers
             FanSpeedService fanSpeedService = new FanSpeedService(_context);
             try
             {
-                List<FanSpeedStatus> fanSpeedStatus = await fanSpeedService.GetFanSpeedStatus();
+                List<CheckLastFanSpeed> fanSpeedStatus = await fanSpeedService.GetFanSpeedStatus();
                 return fanSpeedStatus;
             }
             catch (Exception ex)
             {
-
                 throw;
             }
         }

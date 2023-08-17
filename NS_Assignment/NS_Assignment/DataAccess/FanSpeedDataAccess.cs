@@ -31,6 +31,13 @@ namespace NS_AssignmentAPI.DataAccess
         {
             try
             {
+                if (_context.FanSpeedStatuses.Any())
+                {
+                    // Delete existing records
+                    _context.FanSpeedStatuses.RemoveRange(_context.FanSpeedStatuses);
+                    await _context.SaveChangesAsync();
+                }
+
                 _context.FanSpeedStatuses.Add(fanSpeedStatus);
                 await _context.SaveChangesAsync();
 
