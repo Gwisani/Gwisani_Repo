@@ -60,24 +60,6 @@ namespace NS_AssignmentAPI.Services
             }
         }
 
-        public async Task<FanSpeedStatus> DeleteFanSpeedStatus(ActionResult? id)
-        {
-            
-            FanSpeedDataAccess da = new FanSpeedDataAccess(_context);
-            try
-            {
-                var fanSpeedStatus = await da.DeleteFanSpeedStatus(id);
-                return fanSpeedStatus;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
-           
-
-        }
+        
     }
 }

@@ -94,34 +94,5 @@ namespace NS_AssignmentAPI.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteFanSpeedStatus(long id)
-        {
-            if (_context.FanSpeedStatuses == null)
-            {
-                return NotFound();
-            }
-
-            FanSpeedService fanSpeedService = new FanSpeedService(_context);
-            try
-            {
-             var   fanSpeedStatus =  GetFanSpeedStatus(id).Result;
-                if (fanSpeedStatus == null)
-                {
-                    return NotFound();
-                }
-
-
-                var fanSpeedStatus1 = await fanSpeedService.DeleteFanSpeedStatus(fanSpeedStatus.Result);
-             
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-            return NoContent();
-        }
-
     }
 }

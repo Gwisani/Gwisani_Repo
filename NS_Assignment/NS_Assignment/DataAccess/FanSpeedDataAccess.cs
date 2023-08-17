@@ -57,10 +57,5 @@ namespace NS_AssignmentAPI.DataAccess
             }
         }
 
-        public async Task<FanSpeedStatus> DeleteFanSpeedStatus(long id)
-        {
-            _context.FanSpeedStatuses.Remove(id);
-            await _context.SaveChangesAsync();
-        }
     }
 }
