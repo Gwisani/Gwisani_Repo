@@ -23,17 +23,21 @@ namespace NS_AssignmentAPI.Services
                 List<CheckLastFanSpeed> checkLastFanSpeed = new List<CheckLastFanSpeed>();
                 List<FanSpeedStatus> fanSpeedStatuses = await da.GetFanSpeedStatus();
 
-                if (fanSpeedStatuses != null)
+                if (fanSpeedStatuses is { Count: > 0 })
                 {
-                    checkLastFanSpeed[0].LastPullCodeId = fanSpeedStatuses[0].PullCodeId;
-                    checkLastFanSpeed[0].LastFanSpeed = fanSpeedStatuses[0].PullFanSpeedRequest;
+                    CheckLastFanSpeed lastFanSpeed = new CheckLastFanSpeed
+                    {
+                        LastPullCodeId = fanSpeedStatuses[0].PullCodeId,
+                        LastFanSpeed = fanSpeedStatuses[0].PullFanSpeedRequest
+                    };
+
+                    checkLastFanSpeed.Add(lastFanSpeed);
                 }
 
                 return checkLastFanSpeed;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
