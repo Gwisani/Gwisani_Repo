@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Power on/off</h1>
+
+    <input type="checkbox" id="powerCheckbox" class="checkbox">
+    <label for="powerCheckbox"class="powerbutton"><p>OFF       ON</p></label>
+    
+</div>
+
+<div class="text-center">
+    <div class="button-container">
+        <button id="PC1Button" class="btn btn-primary">Pull Code 1</button>
+        <button id="PC2Button" class="btn btn-primary">Pull Code 2</button>
+    </div>
+</div>
+
+<div class="text-center">
+    <img src="images/fan.png" alt="Image" class="image-below-label rotate linear infinite"
+         @* position="relative" 
+         display="inline-block"
+         margin="20px auto" 
+         max-width="100%" 
+         height="auto" *@ >
+</div>
