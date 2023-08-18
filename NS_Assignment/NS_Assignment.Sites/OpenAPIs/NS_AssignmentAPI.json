@@ -1,0 +1,109 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NS_AssignmentAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/FanSpeedStatus/GetFanSpeedStatus": {
+      "get": {
+        "tags": [
+          "FanSpeedStatus"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CheckLastFanSpeed"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/FanSpeedStatus/PostFanSpeedStatus": {
+      "post": {
+        "tags": [
+          "FanSpeedStatus"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FanSpeedStatus"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FanSpeedStatus"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FanSpeedStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FanSpeedStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CheckLastFanSpeed": {
+        "type": "object",
+        "properties": {
+          "lastPullCodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastFanSpeed": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FanSpeedStatus": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pullCodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "pullFanSpeedRequest": {
+            "type": "string",
+            "nullable": true
+          },
+          "currentFanSpeed": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
