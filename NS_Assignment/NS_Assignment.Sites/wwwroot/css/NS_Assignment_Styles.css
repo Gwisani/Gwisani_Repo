@@ -68,7 +68,7 @@ p {
 }
 
 .rotate {
-    animation: rotation 2s;
+    animation: rotation 0s;
 }
 
 @keyframes rotation {

@@ -79,12 +79,13 @@ namespace NS_AssignmentAPI.Controllers
             {
                 return Problem("Entity set 'FanSpeedsContext.FanSpeedStatuses'  is null.");
             }
-            FanSpeedService fanSpeedService = new FanSpeedService(_context);
+            
 
             try
             {
+                FanSpeedService fanSpeedService = new FanSpeedService(_context);
                 FanSpeedStatus postFanSpeedStatus = await fanSpeedService.PostFanSpeedStatus( fanSpeedStatus);
-                return CreatedAtAction("GetFanSpeedStatus", new { id = postFanSpeedStatus.Id }, fanSpeedStatus);
+                return postFanSpeedStatus;
             }
             catch (Exception ex)
             {

@@ -39,5 +39,44 @@ namespace NS_Assignment.Sites.Pages
             }
             return new JsonResult(checkLastFanSpeed);
         }
+
+        [HttpGet]
+        public async Task<JsonResult> OnGetOnButtonClickUpdate(string pullCodeId, string currentFanSpeed)
+        {
+            FanSpeedStatus fanSpeedStatus = new FanSpeedStatus
+            {
+                PullCodeId = pullCodeId,
+                CurrentFanSpeed = currentFanSpeed
+            };
+
+            FanSpeedStatus resultSpeedStatus;
+
+            int currentSpeedIndex = Array.IndexOf(new string[] { "S0", "S1", "S2", "S3" }, currentFanSpeed);
+
+            if (pullCodeId == "P1")
+            {
+                // Increase fan speed
+                int nextSpeedIndex = (currentSpeedIndex + 1) % 4;
+                fanSpeedStatus.PullFanSpeedRequest = new string[] { "S0", "S1", "S2", "S3" }[nextSpeedIndex];
+            }
+            else if (pullCodeId == "P2")
+            {
+                // Decrease fan speed
+                int prevSpeedIndex = (currentSpeedIndex + 3) % 4;
+                fanSpeedStatus.PullFanSpeedRequest = new string[] { "S0", "S1", "S2", "S3" }[prevSpeedIndex];
+            }
+
+            try
+            {
+                 resultSpeedStatus = await _apiClient.PostFanSpeedStatusAsync(fanSpeedStatus);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return new JsonResult(resultSpeedStatus);
+        }
     }
 }
