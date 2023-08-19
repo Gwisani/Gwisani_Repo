@@ -12,7 +12,7 @@ namespace NS_Assignment.Sites.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            string baseUrl = "http://localhost:2030/"; // Replace with your API's base URL
+            string baseUrl = "http://localhost:8080/"; // Docker listening port is 8080
             _apiClient = new NS_AssignmentAPIClient(baseUrl, new HttpClient());
 
         }

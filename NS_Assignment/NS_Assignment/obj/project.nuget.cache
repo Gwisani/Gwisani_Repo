@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zkBJyAf0biPjZ2ayqLKYTRtZRdA5///q8AGe0er8l0aEMGoGaL98AI69lY3jQX8DSJifmuKjO2v0HtffEzUsqg==",
+  "dgSpecHash": "CmIA6B5BtdB6NjCC5Ac/StTOAW0kU1q5WQ5CJGNh65LaPEbv+6ZKXWjPfdxkS6ISlaS9COTziO7MctJEzVzsiQ==",
   "success": true,
   "projectFilePath": "C:\\GwisaniRepository\\Gwisani_Repo\\NS_Assignment\\NS_Assignment\\NS_AssignmentAPI.csproj",
   "expectedPackageFiles": [
@@ -108,6 +108,7 @@
     "C:\\Users\\gmavuma\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\gmavuma\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\gmavuma\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\gmavuma\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\gmavuma\\.nuget\\packages\\microsoft.visualstudio.debugger.contracts\\17.2.0\\microsoft.visualstudio.debugger.contracts.17.2.0.nupkg.sha512",
     "C:\\Users\\gmavuma\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\6.0.16\\microsoft.visualstudio.web.codegeneration.6.0.16.nupkg.sha512",
     "C:\\Users\\gmavuma\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\6.0.16\\microsoft.visualstudio.web.codegeneration.core.6.0.16.nupkg.sha512",
