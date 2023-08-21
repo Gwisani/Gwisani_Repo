@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ns_assignmentapi:
+    image: ${DOCKER_REGISTRY-}nsassignmentapi
+    build:
+      context: .
+      dockerfile: NS_Assignment\Dockerfile
