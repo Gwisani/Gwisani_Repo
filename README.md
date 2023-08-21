@@ -8,29 +8,35 @@ Port 8080(Change this port if not available)
 URL: http://localhost:8080/swagger/index.html 
 
 1. Open visual studio, search for terminal at the search bar, ensure NS_AssigmentAPI is selected
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/be4603c6-4721-4ff5-a88b-745e5ce8d1ad)
 
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/01cc07ee-548f-45e8-abb5-498bd321f535)
+Docker URL: http://localhost:8080/swagger/index.html 
+![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/11e0d714-dfa7-4506-b0d6-ef84f65d31b9)
 
-2. Run the docker cmd line below to deploy the APIdocker build -t gwisanidocker:v1 -f NS_Assignment/Dockerfile .
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/75d05bca-a643-41ce-976c-54274bf577b0)
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/68b90766-e00f-4abc-b8cf-51219748b715)
 
-After this is done building, run the command below to start the api, and ensure the url is running before running the site. ![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/2548bc9d-b762-4a25-8bf3-164002dc54a1)
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/81b62d8e-b7e6-4e0e-81f3-3840e4f13615)
+2. Run the docker cmd line below to build and deploy the API
+   docker build -t gwisanidocker:v1 -f NS_Assignment/Dockerfile .
+![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/6ab605cc-f0e2-4b9d-b96c-b9805f7e9cdc)
 
-This is how the api should look like when running through swagger
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/21d7b6de-3d1e-4537-988d-097481fcd115)
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/e00a226f-f7ae-4b20-a459-483650982e7f)
+
+3. After this is done building, run the command below to start the api, and ensure the url is running before running the site.
+   cmd line: docker run -it --rm -p 8080:80 gwisanidocker:v1
+![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/e63ee5a1-2559-4fd9-8487-c6d7fb336589)
+
+
+This is how the api should look like when running through swagger, using url http://localhost:8080/swagger/index.html 
+![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/bdd7313b-7d7c-410a-97a3-874f775c0333)
+
 
 To run the website, select the NS_Assignemnt.Sites and press debug to run
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/e0aabbaf-3b52-4b71-8eca-4646cc469e3f)
+![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/fa37d08b-eaf3-454d-bd3b-89ac44d4a063)
+
 
 if you changed the docker listening port, open the index.cshtml.cs code behind and enter the new one on the base url variable as shown below
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/1fe8ef98-6bca-4fdf-90f5-7723feac8bb9)
+![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/973f01bd-f203-41ed-8223-d5c257543e08)
 
-will open with this URL: https://localhost:7190/ and page will be like this
+run the project and it will open with this URL: https://localhost:7190/ and page will be like this
 
-![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/6015ddee-50a5-48b1-89a1-9fc28a259b84)
+![image](https://github.com/Gwisani/Gwisani_Repo/assets/127345901/2a3e2607-33d5-4f15-b7c2-3d0fa0b19580)
+
 
 
